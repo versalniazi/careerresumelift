@@ -105,7 +105,7 @@ export function Hero() {
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute -left-10 top-8 z-20 hidden rounded-2xl border border-border bg-card p-4 shadow-xl sm:flex sm:flex-col"
+                className="absolute -left-10 -top-16 z-20 hidden rounded-2xl border border-border bg-card p-4 shadow-xl sm:flex sm:flex-col"
               >
                 <span className="text-xs text-muted-foreground">Interview Requests</span>
                 <span className="font-heading text-2xl font-extrabold text-secondary">+312%</span>
