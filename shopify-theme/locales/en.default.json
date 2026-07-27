@@ -1,0 +1,91 @@
+{
+  "general": {
+    "meta": {
+      "tags": "Tagged \"{{ tags }}\""
+    },
+    "search": {
+      "search": "Search",
+      "no_results": "No results found for \"{{ terms }}\"",
+      "results_with_count": "{{ count }} results found",
+      "placeholder": "Search articles, services..."
+    },
+    "404": {
+      "title": "Page Not Found",
+      "subtext": "The page you're looking for doesn't exist or may have moved. Let's get you back on track.",
+      "link": "Back to Homepage"
+    },
+    "continue_shopping": "Continue browsing"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "close": "Close",
+    "menu": "Menu",
+    "cart": "Cart",
+    "search": "Search",
+    "unit_price_separator": "per",
+    "vendor": "Vendor:",
+    "star_reviews_info": "{{ rating_value }} out of {{ rating_max }} stars",
+    "toggle_theme": "Toggle dark mode"
+  },
+  "products": {
+    "product": {
+      "add_to_cart": "Add to Cart",
+      "sold_out": "Sold Out",
+      "unavailable": "Unavailable",
+      "choose_package": "Choose your package",
+      "on_sale": "Sale",
+      "quantity": {
+        "label": "Quantity"
+      },
+      "price": {
+        "from_price_html": "From {{ price }}"
+      },
+      "view_details": "View Details"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Cart",
+      "empty": "Your cart is empty",
+      "empty_subtext": "Looks like you haven't chosen a resume package yet.",
+      "continue_shopping": "Browse Services",
+      "checkout": "Checkout",
+      "subtotal": "Subtotal",
+      "remove": "Remove",
+      "note": "Add a note about your project (optional)",
+      "close": "Close cart"
+    }
+  },
+  "blogs": {
+    "article": {
+      "read_more": "Read More",
+      "back_to_blog": "Back to all articles",
+      "written_by": "Written by {{ author }}",
+      "tags": "Categories"
+    },
+    "comments": {
+      "title": "Leave a comment",
+      "name": "Name",
+      "email": "Email",
+      "message": "Message",
+      "post": "Post Comment"
+    }
+  },
+  "contact": {
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "phone": "Phone Number (Optional)",
+      "message": "How can we help?",
+      "message_placeholder": "Tell us about your career goals, target roles, and where you're currently stuck...",
+      "send": "Send Message",
+      "post_success": "Thanks for reaching out! A member of our team will respond within one business day.",
+      "error_heading": "Please fix the following:"
+    }
+  },
+  "newsletter": {
+    "label": "Email address",
+    "success": "Thanks for subscribing! We'll be in touch.",
+    "button_label": "Subscribe"
+  }
+}

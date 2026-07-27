@@ -1,0 +1,54 @@
+{% render 'breadcrumbs', parent_title: blog.title, parent_url: blog.url, current_title: article.title %}
+
+<article class="section section--tight">
+  <div class="container">
+    <div class="article" data-reveal>
+      {%- if article.tags.first -%}<span class="badge badge--default">{{ article.tags.first }}</span>{%- endif -%}
+      <h1 style="font-family:var(--font-heading);font-weight:800;font-size:clamp(1.9rem,3.4vw,2.5rem);margin:18px 0 0;">{{ article.title }}</h1>
+
+      <div class="article__meta">
+        <span>{{ article.author }}</span>
+        <span>&middot;</span>
+        <span>{{ article.published_at | date: '%B %-d, %Y' }}</span>
+        <span>&middot;</span>
+        <span>{{ article.content | strip_html | split: ' ' | size | divided_by: 200 | at_least: 1 }} min read</span>
+      </div>
+
+      {%- if article.image -%}
+        <div style="border-radius:var(--radius-lg);overflow:hidden;margin-bottom:32px;">
+          {{ article.image | image_url: width: 1200 | image_tag: loading: 'eager', alt: article.image.alt }}
+        </div>
+      {%- endif -%}
+
+      <div class="article__body">
+        {{ article.content }}
+      </div>
+    </div>
+  </div>
+</article>
+
+{%- assign related_count = 0 -%}
+{%- for a in blog.articles -%}{%- if a.id != article.id and a.tags.first == article.tags.first -%}{%- assign related_count = related_count | plus: 1 -%}{%- endif -%}{%- endfor -%}
+
+{%- if related_count > 0 -%}
+  <section class="section section--muted">
+    <div class="container">
+      <h2 class="text-center" style="font-size:1.5rem;margin-bottom:40px;">More on {{ article.tags.first }}</h2>
+      <div class="grid grid--3">
+        {%- assign shown = 0 -%}
+        {%- for a in blog.articles -%}
+          {%- if a.id != article.id and a.tags.first == article.tags.first and shown < 3 -%}
+            {%- assign shown = shown | plus: 1 -%}
+            {%- render 'blog-card', article: a, index: shown -%}
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Article"
+}
+{% endschema %}

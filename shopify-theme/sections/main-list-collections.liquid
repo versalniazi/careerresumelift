@@ -1,0 +1,40 @@
+{% render 'breadcrumbs', current_title: 'Collections' %}
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <h1 style="font-family:var(--font-heading);font-weight:800;font-size:clamp(1.9rem,3.2vw,2.4rem);margin-bottom:8px;">Browse Packages</h1>
+      <p>Explore our resume writing packages by category.</p>
+    </div>
+
+    <div class="grid grid--3">
+      {%- for collection in collections -%}
+        {%- unless collection.handle == 'frontpage' -%}
+          <a href="{{ collection.url }}" class="product-card" data-reveal>
+            <div class="product-card__media">
+              {%- if collection.image -%}
+                {{ collection.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: collection.title }}
+              {%- else -%}
+                {% render 'icon', name: 'file-text', width: 32, height: 32 %}
+              {%- endif -%}
+            </div>
+            <div class="product-card__body">
+              <h3>{{ collection.title }}</h3>
+              <p>{{ collection.description | strip_html | truncate: 100 }}</p>
+              <span class="feature-card__link" style="margin-top:12px;">
+                View packages
+                {% render 'icon', name: 'arrow-right', width: 14, height: 14 %}
+              </span>
+            </div>
+          </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "List collections"
+}
+{% endschema %}

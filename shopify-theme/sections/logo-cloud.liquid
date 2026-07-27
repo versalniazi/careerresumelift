@@ -1,0 +1,45 @@
+{%- if section.blocks.size > 0 -%}
+  <section class="logo-cloud">
+    <p class="logo-cloud__label">{{ section.settings.label }}</p>
+    <div class="logo-cloud__track">
+      {%- for block in section.blocks -%}
+        <span {{ block.shopify_attributes }}>{{ block.settings.name }}</span>
+      {%- endfor -%}
+      {%- comment -%} duplicate for seamless marquee loop {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        <span aria-hidden="true">{{ block.settings.name }}</span>
+      {%- endfor -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Logo cloud",
+  "settings": [
+    { "type": "text", "id": "label", "label": "Label", "default": "Trusted by professionals who went on to work at" }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Company",
+      "settings": [
+        { "type": "text", "id": "name", "label": "Company name", "default": "Company" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "logo", "settings": { "name": "TechNova" } },
+      { "type": "logo", "settings": { "name": "Meridian Health" } },
+      { "type": "logo", "settings": { "name": "Sterling Financial" } },
+      { "type": "logo", "settings": { "name": "Beacon Logistics" } },
+      { "type": "logo", "settings": { "name": "Vantage Federal" } },
+      { "type": "logo", "settings": { "name": "Horizon Legal" } },
+      { "type": "logo", "settings": { "name": "Crestview Marketing" } },
+      { "type": "logo", "settings": { "name": "Ironclad Manufacturing" } }
+    ]
+  },
+  "presets": [{ "name": "Logo cloud" }]
+}
+{% endschema %}

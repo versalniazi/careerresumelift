@@ -1,0 +1,18 @@
+{%- if settings.show_sticky_cta -%}
+  <div class="sticky-cta" data-sticky-cta hidden>
+    <div class="sticky-cta__inner">
+      <span class="sticky-cta__icon">{% render 'icon', name: 'zap', width: 20, height: 20 %}</span>
+      <div class="sticky-cta__text">
+        <p class="sticky-cta__heading">{{ settings.sticky_cta_heading }}</p>
+        <p class="sticky-cta__desc">{{ settings.sticky_cta_text }}</p>
+      </div>
+      <a href="{{ settings.sticky_cta_link }}" class="btn btn--primary btn--sm">
+        {{ settings.sticky_cta_button_label }}
+        {% render 'icon', name: 'arrow-right', width: 16, height: 16 %}
+      </a>
+      <button class="sticky-cta__dismiss" data-sticky-cta-dismiss aria-label="{{ 'accessibility.close' | t }}">
+        {% render 'icon', name: 'x', width: 16, height: 16 %}
+      </button>
+    </div>
+  </div>
+{%- endif -%}

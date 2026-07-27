@@ -1,0 +1,135 @@
+{
+  "sections": {
+    "hero": {
+      "type": "hero",
+      "settings": {}
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "logo-cloud": {
+      "type": "logo-cloud",
+      "blocks": {
+        "logo1": { "type": "logo", "settings": { "name": "TechNova" } },
+        "logo2": { "type": "logo", "settings": { "name": "Meridian Health" } },
+        "logo3": { "type": "logo", "settings": { "name": "Sterling Financial" } },
+        "logo4": { "type": "logo", "settings": { "name": "Beacon Logistics" } },
+        "logo5": { "type": "logo", "settings": { "name": "Vantage Federal" } },
+        "logo6": { "type": "logo", "settings": { "name": "Horizon Legal" } },
+        "logo7": { "type": "logo", "settings": { "name": "Crestview Marketing" } },
+        "logo8": { "type": "logo", "settings": { "name": "Ironclad Manufacturing" } }
+      },
+      "block_order": ["logo1", "logo2", "logo3", "logo4", "logo5", "logo6", "logo7", "logo8"],
+      "settings": {}
+    },
+    "stats": {
+      "type": "stats",
+      "settings": {}
+    },
+    "services-grid": {
+      "type": "services-grid",
+      "blocks": {
+        "svc1": { "type": "service", "settings": { "icon": "file-text", "title": "Resume Writing", "description": "ATS-optimized resumes for every career stage.", "link": "/products/resume-writing" } },
+        "svc2": { "type": "service", "settings": { "icon": "target", "title": "Executive Resume", "description": "C-Suite, VP & Director-level resume branding.", "link": "/products/executive-resume" } },
+        "svc3": { "type": "service", "settings": { "icon": "shield-check", "title": "Federal Resume", "description": "USAJOBS-compliant federal resume writing.", "link": "/products/federal-resume" } },
+        "svc4": { "type": "service", "settings": { "icon": "users", "title": "Military Resume", "description": "Military-to-civilian career transition resumes.", "link": "/products/military-resume" } },
+        "svc5": { "type": "service", "settings": { "icon": "star", "title": "Graduate Resume", "description": "Entry-level resumes for new graduates.", "link": "/products/graduate-resume" } },
+        "svc6": { "type": "service", "settings": { "icon": "linkedin", "title": "LinkedIn Optimization", "description": "Recruiter-ready LinkedIn profile makeovers.", "link": "/products/linkedin-optimization" } },
+        "svc7": { "type": "service", "settings": { "icon": "mail", "title": "Cover Letter Writing", "description": "Persuasive, tailored cover letters.", "link": "/products/cover-letter" } },
+        "svc8": { "type": "service", "settings": { "icon": "trending-up", "title": "Career Coaching", "description": "1:1 coaching to plan your next career move.", "link": "/products/career-coaching" } },
+        "svc9": { "type": "service", "settings": { "icon": "check", "title": "Interview Coaching", "description": "Mock interviews & offer negotiation prep.", "link": "/products/interview-coaching" } }
+      },
+      "block_order": ["svc1", "svc2", "svc3", "svc4", "svc5", "svc6", "svc7", "svc8", "svc9"],
+      "settings": {
+        "eyebrow": "Our Services",
+        "heading": "Every Career Document You Need to Get Hired",
+        "description": "From entry-level to the C-Suite, federal to military transition — our CPRW-certified writers cover every career stage and industry.",
+        "show_cta": true,
+        "cta_label": "See All Packages & Compare",
+        "cta_link": "/collections/all"
+      }
+    },
+    "why-choose-us": {
+      "type": "why-choose-us",
+      "blocks": {
+        "r1": { "type": "reason", "settings": { "icon": "check", "title": "1:1 With a CPRW", "description": "You're matched with a real Certified Professional Resume Writer — not an algorithm or a template." } },
+        "r2": { "type": "reason", "settings": { "icon": "scan-search", "title": "Built for ATS & Humans", "description": "Every resume is engineered to pass Applicant Tracking Systems while impressing the recruiter who reads it next." } },
+        "r3": { "type": "reason", "settings": { "icon": "target", "title": "20+ Industries Covered", "description": "From tech and healthcare to federal and executive leadership, your writer understands your industry's language." } },
+        "r4": { "type": "reason", "settings": { "icon": "zap", "title": "Fast, Reliable Turnaround", "description": "Most resumes are delivered within 3–5 business days — without sacrificing quality or attention to detail." } },
+        "r5": { "type": "reason", "settings": { "icon": "lock", "title": "100% Confidential", "description": "Your career information and documents are always kept private and secure." } },
+        "r6": { "type": "reason", "settings": { "icon": "shield-check", "title": "Satisfaction Guaranteed", "description": "Unlimited revisions within your package's window, backed by our written satisfaction guarantee." } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"],
+      "settings": {}
+    },
+    "process-steps": {
+      "type": "process-steps",
+      "blocks": {
+        "s1": { "type": "step", "settings": { "title": "Book Your Free Resume Review", "description": "Submit your current resume for a free, no-obligation review from a Certified Professional Resume Writer." } },
+        "s2": { "type": "step", "settings": { "title": "Choose Your Package", "description": "Select the package that fits your career level and goals, from entry-level to executive and federal." } },
+        "s3": { "type": "step", "settings": { "title": "Collaborate With Your Writer", "description": "Complete a detailed intake questionnaire and work 1:1 with your writer through drafts and revisions." } },
+        "s4": { "type": "step", "settings": { "title": "Land More Interviews", "description": "Receive your final, ATS-optimized resume and start applying with confidence." } }
+      },
+      "block_order": ["s1", "s2", "s3", "s4"],
+      "settings": {}
+    },
+    "before-after": {
+      "type": "before-after",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "t1": { "type": "testimonial", "settings": { "name": "Amanda R.", "role": "Senior Marketing Director", "initials": "AR", "rating": 5, "quote": "The resume my writer delivered didn't just look better — it told a story recruiters actually responded to. I had three interview requests within the first two weeks.", "result": "3 interviews in 2 weeks" } },
+        "t2": { "type": "testimonial", "settings": { "name": "David C.", "role": "VP of Operations", "initials": "DC", "rating": 5, "quote": "As a VP, I needed a resume that spoke to boards and search firms, not just HR screeners. The executive positioning was exactly what I was missing.", "result": "Landed VP role in 6 weeks" } },
+        "t3": { "type": "testimonial", "settings": { "name": "Priya N.", "role": "Registered Nurse, ICU", "initials": "PN", "rating": 5, "quote": "I hadn't updated my resume in eight years. My writer helped me translate years of clinical experience into a document that actually reflected my expertise.", "result": "" } },
+        "t4": { "type": "testimonial", "settings": { "name": "Marcus T.", "role": "Software Engineer", "initials": "MT", "rating": 5, "quote": "The ATS optimization made a real difference. I went from almost no callbacks to getting recruiter messages on LinkedIn within days.", "result": "Recruiter inbound within days" } },
+        "t5": { "type": "testimonial", "settings": { "name": "Robert H.", "role": "Operations Manager, Military Transition", "initials": "RH", "rating": 5, "quote": "I struggled to explain my Army experience in civilian terms. My writer translated 12 years of leadership into a resume hiring managers immediately understood.", "result": "" } },
+        "t6": { "type": "testimonial", "settings": { "name": "Sarah K.", "role": "Financial Analyst", "initials": "SK", "rating": 5, "quote": "Professional, responsive, and genuinely invested in getting the details right. The final resume was polished and precisely tailored to the roles I wanted.", "result": "" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6"],
+      "settings": {
+        "eyebrow": "Client Success",
+        "heading": "Real Results From Real Job Seekers",
+        "description": "Thousands of professionals have trusted us to represent their careers on paper. Here's what a few of them have to say.",
+        "show_ratings": true,
+        "muted_bg": false
+      }
+    },
+    "faq": {
+      "type": "faq-accordion",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How does the resume writing process work?", "answer": "After you choose a package and complete checkout, you'll fill out a detailed intake questionnaire about your work history and goals. Your assigned Certified Professional Resume Writer researches your target role, drafts your resume, and delivers it within your package's turnaround window." } },
+        "f2": { "type": "faq", "settings": { "question": "How long does it take to get my resume?", "answer": "Standard turnaround is 3–7 business days depending on your package, starting from when you submit your completed intake questionnaire. Rush delivery is available for select packages." } },
+        "f3": { "type": "faq", "settings": { "question": "Will my resume pass Applicant Tracking Systems (ATS)?", "answer": "Yes. Every resume is formatted and keyword-optimized specifically to parse correctly in major ATS platforms including Workday, Taleo, iCIMS, and Greenhouse." } },
+        "f4": { "type": "faq", "settings": { "question": "Which package is right for me?", "answer": "Our Professional Resume package suits most mid-level professionals. Executives and senior leaders should consider our Executive Resume package. Federal job seekers need our Federal Resume package." } },
+        "f5": { "type": "faq", "settings": { "question": "How many revisions do I get?", "answer": "Revision rounds vary by package, typically 2–3 rounds, with some packages including unlimited revisions within a set time window." } },
+        "f6": { "type": "faq", "settings": { "question": "Is there a money-back guarantee?", "answer": "Yes. If you're not satisfied after your revision rounds, we offer a satisfaction guarantee outlined in our Refund Policy. We work with you until your resume meets professional standards." } }
+      },
+      "block_order": ["f1", "f2", "f3", "f4", "f5", "f6"],
+      "settings": {
+        "eyebrow": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "description": "Everything you need to know about working with Career Resume Lift."
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "trust-bar",
+    "logo-cloud",
+    "stats",
+    "services-grid",
+    "why-choose-us",
+    "process-steps",
+    "before-after",
+    "testimonials",
+    "faq",
+    "cta"
+  ]
+}

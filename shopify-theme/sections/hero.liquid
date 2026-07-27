@@ -1,0 +1,95 @@
+<section class="hero">
+  <div class="hero__bg-grid"></div>
+  <div class="hero__glow"></div>
+  <div class="container">
+    <div class="hero__grid">
+      <div data-reveal>
+        <div class="hero__badges">
+          <span class="badge badge--default">{{ section.settings.badge_1 }}</span>
+          <span class="badge badge--accent">{{ section.settings.badge_2 }}</span>
+          <span class="badge badge--muted">{% render 'icon', name: 'star', width: 14, height: 14 %} {{ settings.google_rating }} Rated</span>
+        </div>
+
+        <h1>
+          {{ section.settings.heading_start }}
+          <span class="text-gradient">{{ section.settings.heading_highlight }}</span>
+        </h1>
+
+        <p class="hero__desc">{{ section.settings.description }}</p>
+
+        <div class="hero__ctas">
+          <a href="{{ section.settings.primary_link }}" class="btn btn--primary btn--lg">
+            {{ section.settings.primary_label }}
+            {% render 'icon', name: 'arrow-right', width: 18, height: 18 %}
+          </a>
+          <a href="{{ section.settings.secondary_link }}" class="btn btn--outline btn--lg">{{ section.settings.secondary_label }}</a>
+        </div>
+
+        <div class="hero__trust">
+          <span>{% render 'icon', name: 'badge-check', width: 16, height: 16 %} {{ settings.stat_resumes }} resumes written</span>
+          <span>{% render 'icon', name: 'trending-up', width: 16, height: 16 %} {{ settings.stat_success_rate }} interview success rate</span>
+        </div>
+      </div>
+
+      <div data-reveal data-reveal-delay="150">
+        <div class="hero-visual">
+          <div class="hero-card">
+            <div class="hero-card__head">
+              <div>
+                <p class="hero-card__name">Alexandra Chen</p>
+                <p class="hero-card__role">Senior Product Manager</p>
+              </div>
+              <span class="hero-card__check">{% render 'icon', name: 'check', width: 18, height: 18 %}</span>
+            </div>
+            <div class="hero-card__lines">
+              <div class="hero-card__line" style="width:75%"></div>
+              <div class="hero-card__line" style="width:100%"></div>
+              <div class="hero-card__line" style="width:85%"></div>
+            </div>
+            <div class="hero-card__lines">
+              <div class="hero-card__line" style="width:66%;background:rgba(37,99,235,0.2)"></div>
+              <div class="hero-card__line" style="width:100%"></div>
+              <div class="hero-card__line" style="width:80%"></div>
+            </div>
+            <div class="hero-card__score">
+              <span>ATS Score</span>
+              <span>98/100</span>
+            </div>
+          </div>
+
+          <div class="hero-float hero-float--stat">
+            <span class="hero-float__label">Interview Requests</span>
+            <span class="hero-float__value">+312%</span>
+          </div>
+
+          <div class="hero-float hero-float--avatars">
+            <span class="hero-float__avatars">
+              <span>AR</span><span>DC</span><span>PN</span>
+            </span>
+            <span style="font-size:12px;color:var(--color-muted-text)">Hired this week</span>
+          </div>
+
+          <div class="hero-glow-blur"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    { "type": "text", "id": "badge_1", "label": "Badge 1", "default": "CPRW Certified" },
+    { "type": "text", "id": "badge_2", "label": "Badge 2", "default": "ATS Optimized" },
+    { "type": "text", "id": "heading_start", "label": "Heading (start)", "default": "Land More Interviews With a" },
+    { "type": "text", "id": "heading_highlight", "label": "Heading (highlighted)", "default": "Resume That Gets Results" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Work 1:1 with a Certified Professional Resume Writer to build an ATS-optimized, recruiter-approved resume built to US hiring standards — for executives, professionals, and career changers nationwide." },
+    { "type": "text", "id": "primary_label", "label": "Primary button label", "default": "Book Free Resume Review" },
+    { "type": "url", "id": "primary_link", "label": "Primary button link", "default": "/pages/contact" },
+    { "type": "text", "id": "secondary_label", "label": "Secondary button label", "default": "View Resume Samples" },
+    { "type": "url", "id": "secondary_link", "label": "Secondary button link", "default": "/pages/success-stories" }
+  ],
+  "presets": [{ "name": "Hero" }]
+}
+{% endschema %}

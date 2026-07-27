@@ -1,0 +1,142 @@
+{% render 'breadcrumbs', parent_title: 'Services', parent_url: '/collections/all', current_title: product.title %}
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="product-layout">
+      <div class="product-gallery">
+        {%- if product.featured_media -%}
+          <div class="product-gallery__main">
+            {{ product.featured_media | image_url: width: 900 | image_tag: loading: 'eager', alt: product.featured_media.alt }}
+          </div>
+        {%- else -%}
+          <div class="product-gallery__main">
+            <div class="product-gallery__placeholder">
+              {% render 'icon', name: 'file-text', width: 48, height: 48 %}
+              <span>{{ product.title }}</span>
+            </div>
+          </div>
+        {%- endif -%}
+      </div>
+
+      <div class="product-info" data-reveal>
+        <span class="eyebrow-badge">{{ product.type | default: 'Career Service' }}</span>
+        <h1>{{ product.title }}</h1>
+
+        {%- if product.metafields.custom.tagline != blank -%}
+          <p class="hero__desc mt-0">{{ product.metafields.custom.tagline }}</p>
+        {%- endif -%}
+
+        <p class="product-price" data-product-price>
+          {%- if product.compare_at_price > product.price -%}
+            <del>{{ product.compare_at_price | money }}</del>
+          {%- endif -%}
+          {{ product.selected_or_first_available_variant.price | money }}
+        </p>
+
+        {%- form 'product', product, data-product-form: '' -%}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+
+          {%- if product.variants.size > 1 -%}
+            <fieldset>
+              <legend>{{ 'products.product.choose_package' | t }}</legend>
+              <div class="variant-options">
+                {%- for variant in product.variants -%}
+                  <div class="variant-option">
+                    <input
+                      type="radio"
+                      name="variant-radio"
+                      id="variant-{{ variant.id }}"
+                      value="{{ variant.id }}"
+                      data-variant-radio
+                      data-price="{{ variant.price | money }}"
+                      data-available="{{ variant.available }}"
+                      {% if variant.id == product.selected_or_first_available_variant.id %}checked{% endif %}
+                    >
+                    <label for="variant-{{ variant.id }}">
+                      <span>
+                        <span class="variant-option__name">{{ variant.title }}</span>
+                        {%- if variant.available == false -%}
+                          <span class="variant-option__meta">{{ 'products.product.sold_out' | t }}</span>
+                        {%- endif -%}
+                      </span>
+                      <span class="variant-option__price">{{ variant.price | money }}</span>
+                    </label>
+                  </div>
+                {%- endfor -%}
+              </div>
+            </fieldset>
+          {%- endif -%}
+
+          <button
+            type="submit"
+            class="btn btn--primary btn--lg btn--block"
+            data-add-label="{{ 'products.product.add_to_cart' | t }}"
+            data-sold-out-label="{{ 'products.product.sold_out' | t }}"
+            {% unless product.selected_or_first_available_variant.available %}disabled{% endunless %}
+          >
+            {%- if product.selected_or_first_available_variant.available -%}
+              {{ 'products.product.add_to_cart' | t }}
+            {%- else -%}
+              {{ 'products.product.sold_out' | t }}
+            {%- endif -%}
+          </button>
+        {%- endform -%}
+
+        <div class="product-benefits">
+          <div class="product-benefit">
+            {% render 'icon', name: 'badge-check', width: 18, height: 18 %}
+            <span>1:1 with a Certified Professional Resume Writer</span>
+          </div>
+          <div class="product-benefit">
+            {% render 'icon', name: 'scan-search', width: 18, height: 18 %}
+            <span>ATS-optimized formatting &amp; keyword research</span>
+          </div>
+          <div class="product-benefit">
+            {% render 'icon', name: 'lock', width: 18, height: 18 %}
+            <span>100% confidential — your information is never shared</span>
+          </div>
+          <div class="product-benefit">
+            {% render 'icon', name: 'shield-check', width: 18, height: 18 %}
+            <span>Satisfaction guarantee &amp; included revisions</span>
+          </div>
+        </div>
+
+        <div class="product-description">
+          {{ product.description }}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- if section.settings.show_related -%}
+  {%- assign related_collection = product.collections.first -%}
+  {%- if related_collection -%}
+    <section class="section section--muted">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>You Might Also Need</h2>
+          <p>Popular add-ons and complementary services.</p>
+        </div>
+        <div class="grid grid--3">
+          {%- assign count = 0 -%}
+          {%- for related in related_collection.products -%}
+            {%- if related.id != product.id and count < 3 -%}
+              {%- assign count = count | plus: 1 -%}
+              {%- render 'product-card', product: related -%}
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </section>
+  {%- endif -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Product",
+  "settings": [
+    { "type": "checkbox", "id": "show_related", "label": "Show related services", "default": true }
+  ]
+}
+{% endschema %}

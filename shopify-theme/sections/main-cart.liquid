@@ -1,0 +1,35 @@
+{% render 'breadcrumbs', current_title: 'Cart' %}
+
+<section class="section section--tight">
+  <div class="container">
+    <h1 style="font-family:var(--font-heading);font-weight:800;font-size:clamp(1.9rem,3.2vw,2.4rem);margin-bottom:32px;">{{ 'cart.general.title' | t }}</h1>
+
+    <div class="cart-page">
+      <div data-cart-items>
+        {%- render 'cart-items', cart: cart -%}
+      </div>
+
+      <div class="cart-summary" data-cart-footer{% if cart.item_count == 0 %} hidden{% endif %}>
+        <div class="cart-summary__row">
+          <span>{{ 'cart.general.subtotal' | t }}</span>
+          <span data-cart-subtotal>{{ cart.total_price | money }}</span>
+        </div>
+        <p style="font-size:12px;color:var(--color-muted-text);">Taxes and any applicable fees are calculated at checkout.</p>
+        <div class="cart-summary__total">
+          <span>Total</span>
+          <span>{{ cart.total_price | money }}</span>
+        </div>
+        {%- form 'cart' -%}
+          <button type="submit" name="checkout" class="btn btn--primary btn--block btn--lg">{{ 'cart.general.checkout' | t }}</button>
+        {%- endform -%}
+        <a href="{{ routes.all_products_collection_url }}" class="btn btn--outline btn--block" style="margin-top:10px;">{{ 'general.continue_shopping' | t }}</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Cart"
+}
+{% endschema %}

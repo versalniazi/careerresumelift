@@ -1,0 +1,22 @@
+{%- if section.settings.enabled -%}
+  <section class="trust-bar">
+    <div class="container trust-bar__row">
+      <span class="trust-bar__item">{% render 'icon', name: 'badge-check', width: 16, height: 16 %} CPRW Certified</span>
+      <span class="trust-bar__item">{% render 'icon', name: 'scan-search', width: 16, height: 16 %} ATS Optimized</span>
+      <span class="trust-bar__item">{% render 'icon', name: 'lock', width: 16, height: 16 %} 100% Confidential</span>
+      <span class="trust-bar__item">{% render 'icon', name: 'zap', width: 16, height: 16 %} Fast 3–5 Day Delivery</span>
+      <span class="trust-bar__item">{% render 'icon', name: 'shield-check', width: 16, height: 16 %} Secure Payments</span>
+      <span class="trust-bar__item">{% render 'icon', name: 'badge-check', width: 16, height: 16 %} Money-Back Guarantee</span>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Trust bar",
+  "settings": [
+    { "type": "checkbox", "id": "enabled", "label": "Show trust bar", "default": true }
+  ],
+  "presets": [{ "name": "Trust bar" }]
+}
+{% endschema %}

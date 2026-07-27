@@ -1,0 +1,24 @@
+<div class="cart-drawer" data-cart-drawer aria-hidden="true">
+  <div class="cart-drawer__overlay" data-cart-drawer-close></div>
+  <div class="cart-drawer__panel" role="dialog" aria-modal="true" aria-label="{{ 'cart.general.title' | t }}">
+    <div class="cart-drawer__header">
+      <h2>{{ 'cart.general.title' | t }}</h2>
+      <button class="icon-button" data-cart-drawer-close aria-label="{{ 'cart.general.close' | t }}">
+        {% render 'icon', name: 'x' %}
+      </button>
+    </div>
+
+    <div class="cart-drawer__body" data-cart-items>
+      {%- render 'cart-items', cart: cart -%}
+    </div>
+
+    <div class="cart-drawer__footer" data-cart-footer{% if cart.item_count == 0 %} hidden{% endif %}>
+      <div class="cart-drawer__subtotal">
+        <span>{{ 'cart.general.subtotal' | t }}</span>
+        <span data-cart-subtotal>{{ cart.total_price | money }}</span>
+      </div>
+      <a href="{{ routes.cart_url }}" class="btn btn--outline btn--block">{{ 'cart.general.title' | t }}</a>
+      <a href="{{ routes.cart_url }}/checkout" class="btn btn--primary btn--block">{{ 'cart.general.checkout' | t }}</a>
+    </div>
+  </div>
+</div>

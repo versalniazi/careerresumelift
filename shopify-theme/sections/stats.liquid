@@ -1,0 +1,32 @@
+<section class="section">
+  <div class="container">
+    <div class="stats-panel" data-reveal>
+      <div class="stat">
+        <p class="stat__value text-gradient">{{ settings.stat_resumes }}</p>
+        <p class="stat__label">Resumes Written</p>
+      </div>
+      <div class="stat">
+        <p class="stat__value text-gradient">{{ settings.stat_success_rate }}</p>
+        <p class="stat__label">Interview Success Rate</p>
+      </div>
+      <div class="stat">
+        <p class="stat__value text-gradient">{{ settings.stat_rating }}</p>
+        <p class="stat__label">Average Client Rating</p>
+      </div>
+      <div class="stat">
+        <p class="stat__value text-gradient">{{ settings.stat_industries }}</p>
+        <p class="stat__label">Industries Served</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Stats",
+  "settings": [
+    { "type": "paragraph", "content": "Stat values are managed in Theme Settings → Trust & stats." }
+  ],
+  "presets": [{ "name": "Stats" }]
+}
+{% endschema %}

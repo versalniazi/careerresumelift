@@ -1,0 +1,29 @@
+{% render 'breadcrumbs', parent_title: 'My Account', parent_url: routes.account_url, current_title: order.name %}
+
+<section class="section section--tight">
+  <div class="container" style="max-width:800px;">
+    <h1 style="font-size:1.5rem;">Order {{ order.name }}</h1>
+    <p style="color:var(--color-muted-text);font-size:14px;margin-top:6px;">Placed on {{ order.created_at | date: '%B %-d, %Y' }}</p>
+
+    <div class="card" style="margin-top:24px;padding:24px;">
+      <ul class="cart-items-list">
+        {%- for line_item in order.line_items -%}
+          <li class="cart-item">
+            <div class="cart-item__image-placeholder">{% render 'icon', name: 'file-text', width: 24, height: 24 %}</div>
+            <div class="cart-item__details">
+              <p class="cart-item__title">{{ line_item.title }}</p>
+              <p class="cart-item__variant">Qty {{ line_item.quantity }}</p>
+            </div>
+            <span class="cart-item__price">{{ line_item.final_line_price | money }}</span>
+          </li>
+        {%- endfor -%}
+      </ul>
+      <div class="cart-summary__total">
+        <span>Total</span>
+        <span>{{ order.total_price | money }}</span>
+      </div>
+    </div>
+
+    <a href="{{ routes.account_url }}" class="btn btn--outline" style="margin-top:24px;">Back to Account</a>
+  </div>
+</section>

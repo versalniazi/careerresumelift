@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "eyebrow": "Pricing",
+        "description": "Every package includes a dedicated Certified Professional Resume Writer, ATS optimization, and revision rounds. Choose the package that fits your career stage.",
+        "show_trust_bar": true
+      }
+    },
+    "faq": {
+      "type": "faq-accordion",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Which package is right for me?", "answer": "Our Professional Resume package suits most mid-level professionals. Executives and senior leaders should consider our Executive Resume package. Federal job seekers need our Federal Resume package. Contact us and we'll recommend the right fit." } },
+        "f2": { "type": "faq", "settings": { "question": "Do you offer payment plans?", "answer": "Payment plans are available on select packages. Contact our team to discuss options that work for your budget." } },
+        "f3": { "type": "faq", "settings": { "question": "Is there a money-back guarantee?", "answer": "Yes. If you're not satisfied after your revision rounds, we offer a satisfaction guarantee outlined in our Refund Policy." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": {
+        "eyebrow": "Pricing FAQ",
+        "heading": "Pricing Questions, Answered",
+        "description": ""
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Not Sure Which Package Is Right for You?",
+        "description": "Book a free resume review and we'll recommend the best package for your career goals."
+      }
+    }
+  },
+  "order": ["main", "faq", "cta"]
+}

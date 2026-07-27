@@ -1,0 +1,62 @@
+{% render 'breadcrumbs', current_title: collection.title %}
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <span class="eyebrow-badge">{{ section.settings.eyebrow }}</span>
+      <h1 style="font-family:var(--font-heading);font-weight:800;font-size:clamp(1.9rem,3.2vw,2.6rem);margin:16px 0;">{{ collection.title }}</h1>
+      <p>{{ section.settings.description | default: collection.description | strip_html }}</p>
+    </div>
+
+    {%- if section.settings.show_trust_bar -%}
+      <div class="trust-bar" style="margin-bottom:48px;border-radius:var(--radius);">
+        <div class="trust-bar__row" style="padding:20px 0;">
+          <span class="trust-bar__item">{% render 'icon', name: 'badge-check', width: 16, height: 16 %} CPRW Certified</span>
+          <span class="trust-bar__item">{% render 'icon', name: 'scan-search', width: 16, height: 16 %} ATS Optimized</span>
+          <span class="trust-bar__item">{% render 'icon', name: 'zap', width: 16, height: 16 %} Fast Delivery</span>
+          <span class="trust-bar__item">{% render 'icon', name: 'shield-check', width: 16, height: 16 %} Money-Back Guarantee</span>
+        </div>
+      </div>
+    {%- endif -%}
+
+    {%- paginate collection.products by 24 -%}
+      {%- if collection.products.size > 0 -%}
+        <div class="grid grid--3">
+          {%- for product in collection.products -%}
+            {%- render 'product-card', product: product -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="empty-state">
+          <p>No packages have been added to this collection yet.</p>
+          <p style="font-size:13px;margin-top:8px;">Add your service products to this collection in Shopify Admin to display them here.</p>
+        </div>
+      {%- endif -%}
+
+      {%- if paginate.pages > 1 -%}
+        <div class="text-center" style="margin-top:48px;display:flex;justify-content:center;gap:8px;">
+          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" class="btn btn--outline btn--sm">Previous</a>{%- endif -%}
+          {%- for part in paginate.parts -%}
+            {%- if part.is_link -%}
+              <a href="{{ part.url }}" class="btn btn--outline btn--sm">{{ part.title }}</a>
+            {%- else -%}
+              <span class="btn btn--primary btn--sm">{{ part.title }}</span>
+            {%- endif -%}
+          {%- endfor -%}
+          {%- if paginate.next -%}<a href="{{ paginate.next.url }}" class="btn btn--outline btn--sm">Next</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection grid",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Pricing" },
+    { "type": "textarea", "id": "description", "label": "Description override", "default": "Every package includes a dedicated Certified Professional Resume Writer, ATS optimization, and revision rounds. Choose the package that fits your career stage." },
+    { "type": "checkbox", "id": "show_trust_bar", "label": "Show trust bar", "default": true }
+  ]
+}
+{% endschema %}

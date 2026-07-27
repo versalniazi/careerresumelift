@@ -1,0 +1,66 @@
+<section class="section" id="{{ section.id }}">
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <span class="eyebrow-badge">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="grid grid--3">
+      {%- for block in section.blocks -%}
+        <a href="{{ block.settings.link }}" class="feature-card" data-reveal {{ block.shopify_attributes }}>
+          <span class="feature-card__icon">{% render 'icon', name: block.settings.icon, width: 24, height: 24 %}</span>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+          <span class="feature-card__link">
+            Learn more
+            {% render 'icon', name: 'arrow-right', width: 16, height: 16 %}
+          </span>
+        </a>
+      {%- endfor -%}
+    </div>
+
+    {%- if section.settings.show_cta -%}
+      <div class="text-center" style="margin-top:40px" data-reveal>
+        <a href="{{ section.settings.cta_link }}" class="btn btn--outline">
+          {{ section.settings.cta_label }}
+          {% render 'icon', name: 'arrow-right', width: 16, height: 16 %}
+        </a>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Services grid",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Our Services" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Every Career Document You Need to Get Hired" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "From entry-level to the C-Suite, federal to military transition — our CPRW-certified writers cover every career stage and industry." },
+    { "type": "checkbox", "id": "show_cta", "label": "Show button below grid", "default": true },
+    { "type": "text", "id": "cta_label", "label": "Button label", "default": "See All Packages & Compare" },
+    { "type": "url", "id": "cta_link", "label": "Button link", "default": "/collections/all" }
+  ],
+  "blocks": [
+    {
+      "type": "service",
+      "name": "Service",
+      "settings": [
+        { "type": "text", "id": "icon", "label": "Icon name (lowercase, e.g. file-text)", "default": "file-text" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Resume Writing" },
+        { "type": "textarea", "id": "description", "label": "Description" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "service", "settings": { "icon": "file-text", "title": "Resume Writing", "description": "ATS-optimized resumes for every career stage.", "link": "/products/resume-writing" } },
+      { "type": "service", "settings": { "icon": "target", "title": "Executive Resume", "description": "C-Suite, VP & Director-level resume branding.", "link": "/products/executive-resume" } },
+      { "type": "service", "settings": { "icon": "shield-check", "title": "Federal Resume", "description": "USAJOBS-compliant federal resume writing.", "link": "/products/federal-resume" } }
+    ]
+  },
+  "presets": [{ "name": "Services grid" }]
+}
+{% endschema %}

@@ -1,0 +1,101 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="{{ routes.root_url }}" class="site-header__logo">
+          <span class="site-header__logo-mark">CR</span>
+          <span class="site-header__logo-text">{{ shop.name | default: 'Career Resume Lift' }}</span>
+        </a>
+        <p class="footer-brand__desc">
+          {{ section.settings.description | default: shop.description }}
+        </p>
+        <div class="footer-social">
+          {%- if settings.social_linkedin_link != blank -%}
+            <a href="{{ settings.social_linkedin_link }}" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="icon-button icon-button--outline">{% render 'icon', name: 'linkedin', width: 16, height: 16 %}</a>
+          {%- endif -%}
+          {%- if settings.social_twitter_link != blank -%}
+            <a href="{{ settings.social_twitter_link }}" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="icon-button icon-button--outline">{% render 'icon', name: 'twitter', width: 16, height: 16 %}</a>
+          {%- endif -%}
+          {%- if settings.social_facebook_link != blank -%}
+            <a href="{{ settings.social_facebook_link }}" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="icon-button icon-button--outline">{% render 'icon', name: 'facebook', width: 16, height: 16 %}</a>
+          {%- endif -%}
+          {%- if settings.social_instagram_link != blank -%}
+            <a href="{{ settings.social_instagram_link }}" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="icon-button icon-button--outline">{% render 'icon', name: 'instagram', width: 16, height: 16 %}</a>
+          {%- endif -%}
+        </div>
+      </div>
+
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'link_list' -%}
+          <div class="footer-col" {{ block.shopify_attributes }}>
+            <h3 class="footer-col__title">{{ block.settings.title }}</h3>
+            <ul class="footer-col__list">
+              {%- for link in block.settings.menu.links -%}
+                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+              {%- endfor -%}
+            </ul>
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+
+      <div class="footer-col">
+        <h3 class="footer-col__title">Contact</h3>
+        <ul class="footer-col__list footer-col__list--contact">
+          <li><a href="mailto:{{ settings.business_email }}">{% render 'icon', name: 'mail', width: 15, height: 15 %} {{ settings.business_email }}</a></li>
+          <li><a href="tel:{{ settings.business_phone }}">{% render 'icon', name: 'phone', width: 15, height: 15 %} {{ settings.business_phone }}</a></li>
+          <li>{% render 'icon', name: 'map-pin', width: 15, height: 15 %} {{ settings.business_address }}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; {{ 'now' | date: '%Y' }} {{ shop.name }}. All rights reserved.</p>
+      <div class="footer-bottom__legal">
+        {%- for link in linklists.footer-legal.links -%}
+          <a href="{{ link.url }}">{{ link.title }}</a>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+</footer>
+
+{% schema %}
+{
+  "name": "Footer",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Career Resume Lift is a US-based professional resume writing agency led by a Certified Professional Resume Writer (CPRW). ATS-optimized, recruiter-approved resumes for professionals nationwide."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "link_list",
+      "name": "Link list",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Heading",
+          "default": "Services"
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "Menu",
+          "default": "footer-services"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "link_list", "settings": { "title": "Services", "menu": "footer-services" } },
+      { "type": "link_list", "settings": { "title": "Company", "menu": "footer-company" } },
+      { "type": "link_list", "settings": { "title": "Resources", "menu": "footer-resources" } }
+    ]
+  }
+}
+{% endschema %}

@@ -1,0 +1,49 @@
+<section class="section">
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <span class="eyebrow-badge">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="grid grid--4">
+      {%- for block in section.blocks -%}
+        <div class="process-card" data-reveal {{ block.shopify_attributes }}>
+          <span class="process-card__number">{{ forloop.index | prepend: '0' }}</span>
+          <h3>{{ block.settings.title }}</h3>
+          <p>{{ block.settings.description }}</p>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Process steps",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "How It Works" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "From Outdated Resume to Interview-Ready in Four Steps" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "A guided, collaborative process designed to make writing your resume simple and stress-free." }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        { "type": "text", "id": "title", "label": "Title" },
+        { "type": "textarea", "id": "description", "label": "Description" }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      { "type": "step", "settings": { "title": "Book Your Free Resume Review", "description": "Submit your current resume for a free, no-obligation review from a Certified Professional Resume Writer." } },
+      { "type": "step", "settings": { "title": "Choose Your Package", "description": "Select the package that fits your career level and goals, from entry-level to executive and federal." } },
+      { "type": "step", "settings": { "title": "Collaborate With Your Writer", "description": "Complete a detailed intake questionnaire and work 1:1 with your writer through drafts and revisions." } },
+      { "type": "step", "settings": { "title": "Land More Interviews", "description": "Receive your final, ATS-optimized resume and start applying with confidence." } }
+    ]
+  },
+  "presets": [{ "name": "Process steps" }]
+}
+{% endschema %}

@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "breadcrumb_title": "Industries",
+        "eyebrow": "Industries We Serve",
+        "heading": "Resume Expertise Across 20+ Industries",
+        "description": "Every industry speaks a different language. Our writers understand the terminology, hiring standards, and priorities specific to your field."
+      }
+    },
+    "grid": {
+      "type": "icon-grid",
+      "blocks": {
+        "i1": { "type": "item", "settings": { "icon": "file-text", "title": "Technology & IT", "description": "Resumes for software engineers, product managers, data scientists, and IT leaders that speak to technical depth and business impact." } },
+        "i2": { "type": "item", "settings": { "icon": "shield-check", "title": "Healthcare & Nursing", "description": "Clinical and administrative healthcare resumes for nurses, physicians, and healthcare administrators built around patient outcomes and credentials." } },
+        "i3": { "type": "item", "settings": { "icon": "trending-up", "title": "Finance & Accounting", "description": "Resumes for financial analysts, accountants, and finance leaders that highlight quantifiable financial impact and compliance expertise." } },
+        "i4": { "type": "item", "settings": { "icon": "zap", "title": "Marketing & Communications", "description": "Brand, digital, and growth marketing resumes that showcase campaign results, revenue impact, and creative leadership." } },
+        "i5": { "type": "item", "settings": { "icon": "target", "title": "Executive & C-Suite", "description": "Board-ready executive resumes for CEOs, CFOs, COOs, and senior leaders positioning strategic vision and enterprise impact." } },
+        "i6": { "type": "item", "settings": { "icon": "shield-check", "title": "Federal & Government", "description": "USAJOBS-compliant federal resumes aligned to specific vacancy announcements, KSAs, and specialized experience requirements." } },
+        "i7": { "type": "item", "settings": { "icon": "check", "title": "Engineering", "description": "Resumes for mechanical, electrical, civil, and industrial engineers that translate technical projects into measurable outcomes." } },
+        "i8": { "type": "item", "settings": { "icon": "users", "title": "Human Resources", "description": "HR and talent acquisition resumes that highlight organizational impact, change management, and people leadership." } },
+        "i9": { "type": "item", "settings": { "icon": "file-text", "title": "Legal", "description": "Resumes for attorneys, paralegals, and legal operations professionals built around case outcomes and legal expertise." } },
+        "i10": { "type": "item", "settings": { "icon": "trending-up", "title": "Sales & Business Development", "description": "Revenue-focused resumes for sales professionals and business development leaders emphasizing quota attainment and pipeline growth." } },
+        "i11": { "type": "item", "settings": { "icon": "star", "title": "Education & Academia", "description": "Resumes and CVs for educators, administrators, and academic professionals highlighting instructional and institutional impact." } },
+        "i12": { "type": "item", "settings": { "icon": "users", "title": "Nonprofit & Public Sector", "description": "Mission-driven resumes for nonprofit leaders and program managers that translate impact into measurable outcomes." } }
+      },
+      "block_order": ["i1", "i2", "i3", "i4", "i5", "i6", "i7", "i8", "i9", "i10", "i11", "i12"],
+      "settings": {
+        "columns": "3",
+        "muted_bg": false
+      }
+    },
+    "stats": {
+      "type": "stats",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "grid", "stats", "cta"]
+}

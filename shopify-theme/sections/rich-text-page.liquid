@@ -1,0 +1,27 @@
+{% render 'breadcrumbs', current_title: page.title %}
+
+<section class="section section--tight">
+  <div class="container" style="max-width:800px;">
+    <div data-reveal>
+      {%- if section.settings.show_badge -%}<span class="badge badge--muted">Legal</span>{%- endif -%}
+      <h1 style="font-family:var(--font-heading);font-weight:800;font-size:clamp(1.9rem,3.2vw,2.4rem);margin:16px 0 6px;">{{ page.title }}</h1>
+      {%- if section.settings.show_updated -%}
+        <p style="font-size:13px;color:var(--color-muted-text);margin-bottom:32px;">Last updated: {{ section.settings.updated_date }}</p>
+      {%- endif -%}
+      <div class="rich-text" style="margin:0;max-width:100%;">
+        {{ page.content }}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Page content",
+  "settings": [
+    { "type": "checkbox", "id": "show_badge", "label": "Show \"Legal\" badge", "default": false },
+    { "type": "checkbox", "id": "show_updated", "label": "Show last updated date", "default": false },
+    { "type": "text", "id": "updated_date", "label": "Last updated date", "default": "July 27, 2026" }
+  ]
+}
+{% endschema %}

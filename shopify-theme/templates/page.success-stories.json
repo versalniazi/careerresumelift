@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "breadcrumb_title": "Success Stories",
+        "eyebrow": "Success Stories",
+        "heading": "Real Professionals. Real Results.",
+        "description": "From career changers to C-Suite executives, thousands of professionals have trusted Career Resume Lift to represent their careers on paper."
+      }
+    },
+    "trust-bar": {
+      "type": "trust-bar",
+      "settings": {}
+    },
+    "stats": {
+      "type": "stats",
+      "settings": {}
+    },
+    "testimonials": {
+      "type": "testimonials",
+      "blocks": {
+        "t1": { "type": "testimonial", "settings": { "name": "Amanda R.", "role": "Senior Marketing Director", "initials": "AR", "rating": 5, "quote": "The resume my writer delivered didn't just look better — it told a story recruiters actually responded to. I had three interview requests within the first two weeks.", "result": "3 interviews in 2 weeks" } },
+        "t2": { "type": "testimonial", "settings": { "name": "David C.", "role": "VP of Operations", "initials": "DC", "rating": 5, "quote": "As a VP, I needed a resume that spoke to boards and search firms, not just HR screeners. The executive positioning was exactly what I was missing.", "result": "Landed VP role in 6 weeks" } },
+        "t3": { "type": "testimonial", "settings": { "name": "Priya N.", "role": "Registered Nurse, ICU", "initials": "PN", "rating": 5, "quote": "I hadn't updated my resume in eight years. My writer helped me translate years of clinical experience into a document that actually reflected my expertise.", "result": "" } },
+        "t4": { "type": "testimonial", "settings": { "name": "Marcus T.", "role": "Software Engineer", "initials": "MT", "rating": 5, "quote": "The ATS optimization made a real difference. I went from almost no callbacks to getting recruiter messages on LinkedIn within days.", "result": "Recruiter inbound within days" } },
+        "t5": { "type": "testimonial", "settings": { "name": "Robert H.", "role": "Operations Manager, Military Transition", "initials": "RH", "rating": 5, "quote": "I struggled to explain my Army experience in civilian terms. My writer translated 12 years of leadership into a resume hiring managers immediately understood.", "result": "" } },
+        "t6": { "type": "testimonial", "settings": { "name": "Sarah K.", "role": "Financial Analyst", "initials": "SK", "rating": 5, "quote": "Professional, responsive, and genuinely invested in getting the details right. The final resume was polished and precisely tailored to the roles I wanted.", "result": "" } },
+        "t7": { "type": "testimonial", "settings": { "name": "James O.", "role": "Recent MBA Graduate", "initials": "JO", "rating": 5, "quote": "I had almost no full-time work experience, but my writer built a resume around my internships and coursework that made me feel genuinely competitive.", "result": "" } },
+        "t8": { "type": "testimonial", "settings": { "name": "Linda M.", "role": "HR Business Partner, Federal", "initials": "LM", "rating": 5, "quote": "The federal resume process is intimidating, but the team knew exactly what USAJOBS required. My resume was referred on my very next application.", "result": "Referred on next application" } }
+      },
+      "block_order": ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8"],
+      "settings": {
+        "eyebrow": "Client Success",
+        "heading": "Hear From Our Clients",
+        "description": "",
+        "show_ratings": false,
+        "muted_bg": false
+      }
+    },
+    "before-after": {
+      "type": "before-after",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "trust-bar", "stats", "testimonials", "before-after", "cta"]
+}

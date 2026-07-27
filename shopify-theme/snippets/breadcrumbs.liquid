@@ -1,0 +1,17 @@
+{%- comment -%}
+  Usage: {% render 'breadcrumbs', parent_title: 'Services', parent_url: '/collections/all', current_title: product.title %}
+  parent_title/parent_url are optional — omit for a single-level (Home > Current) trail.
+{%- endcomment -%}
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="breadcrumbs__inner">
+    <a href="{{ routes.root_url }}">{% render 'icon', name: 'home', width: 13, height: 13 %}</a>
+    {%- if parent_title != blank -%}
+      {% render 'icon', name: 'chevron-right', width: 13, height: 13 %}
+      <a href="{{ parent_url }}">{{ parent_title }}</a>
+    {%- endif -%}
+    {%- if current_title != blank -%}
+      {% render 'icon', name: 'chevron-right', width: 13, height: 13 %}
+      <span class="breadcrumbs__current">{{ current_title }}</span>
+    {%- endif -%}
+  </div>
+</nav>

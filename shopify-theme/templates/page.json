@@ -1,0 +1,12 @@
+{
+  "sections": {
+    "main": {
+      "type": "rich-text-page",
+      "settings": {
+        "show_badge": false,
+        "show_updated": false
+      }
+    }
+  },
+  "order": ["main"]
+}

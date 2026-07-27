@@ -1,0 +1,45 @@
+<section class="section">
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <span class="eyebrow-badge">{{ section.settings.eyebrow }}</span>
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    <div class="compare-grid">
+      <div class="compare-card compare-card--before" data-reveal>
+        <span class="compare-card__badge">{% render 'icon', name: 'x', width: 14, height: 14 %} Before</span>
+        <h3>The DIY Resume</h3>
+        <ul>
+          <li>{% render 'icon', name: 'x', width: 16, height: 16 %} Generic, duty-based bullet points with no measurable impact</li>
+          <li>{% render 'icon', name: 'x', width: 16, height: 16 %} Dense paragraphs that recruiters skim past in seconds</li>
+          <li>{% render 'icon', name: 'x', width: 16, height: 16 %} Outdated formatting that fails Applicant Tracking Systems</li>
+          <li>{% render 'icon', name: 'x', width: 16, height: 16 %} No clear career narrative or target role</li>
+        </ul>
+      </div>
+
+      <div class="compare-card compare-card--after" data-reveal data-reveal-delay="100">
+        <span class="compare-card__badge">{% render 'icon', name: 'check', width: 14, height: 14 %} After Career Resume Lift</span>
+        <h3>The Professional Resume</h3>
+        <ul>
+          <li>{% render 'icon', name: 'check', width: 16, height: 16 %} Achievement-driven bullets with quantified results</li>
+          <li>{% render 'icon', name: 'check', width: 16, height: 16 %} Clean, scannable formatting recruiters can read in seconds</li>
+          <li>{% render 'icon', name: 'check', width: 16, height: 16 %} ATS-optimized structure that passes automated screening</li>
+          <li>{% render 'icon', name: 'check', width: 16, height: 16 %} A clear, strategic personal brand aligned to your target role</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Before / after",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "The Difference" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "See the Transformation" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "A professionally written resume isn't just prettier — it's strategically built to get results." }
+  ],
+  "presets": [{ "name": "Before / after" }]
+}
+{% endschema %}

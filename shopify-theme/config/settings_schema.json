@@ -1,0 +1,280 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Career Resume Lift",
+    "theme_version": "1.0.0",
+    "theme_author": "Career Resume Lift",
+    "theme_documentation_url": "https://www.careerresumelift.com",
+    "theme_support_url": "https://www.careerresumelift.com/contact"
+  },
+  {
+    "name": "Colors",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Brand palette"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary (Navy)",
+        "default": "#0F172A"
+      },
+      {
+        "type": "color",
+        "id": "color_secondary",
+        "label": "Secondary (Blue)",
+        "default": "#2563EB"
+      },
+      {
+        "type": "color",
+        "id": "color_accent",
+        "label": "Accent (Cyan)",
+        "default": "#06B6D4"
+      },
+      {
+        "type": "color",
+        "id": "color_success",
+        "label": "Success (Green)",
+        "default": "#22C55E"
+      },
+      {
+        "type": "color",
+        "id": "color_background",
+        "label": "Background",
+        "default": "#FFFFFF"
+      },
+      {
+        "type": "color",
+        "id": "color_muted",
+        "label": "Light gray surface",
+        "default": "#F8FAFC"
+      },
+      {
+        "type": "color",
+        "id": "color_border",
+        "label": "Border",
+        "default": "#E2E8F0"
+      },
+      {
+        "type": "color",
+        "id": "color_text",
+        "label": "Body text",
+        "default": "#0F172A"
+      },
+      {
+        "type": "color",
+        "id": "color_muted_text",
+        "label": "Muted text",
+        "default": "#475569"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Headings use Manrope, body text uses Inter, loaded via Google Fonts for exact brand match."
+      },
+      {
+        "type": "range",
+        "id": "heading_weight",
+        "label": "Heading font weight",
+        "min": 600,
+        "max": 800,
+        "step": 100,
+        "default": 800
+      }
+    ]
+  },
+  {
+    "name": "Layout",
+    "settings": [
+      {
+        "type": "range",
+        "id": "page_width",
+        "label": "Page width",
+        "min": 1000,
+        "max": 1600,
+        "step": 20,
+        "unit": "px",
+        "default": 1280
+      },
+      {
+        "type": "range",
+        "id": "border_radius",
+        "label": "Card corner radius",
+        "min": 0,
+        "max": 32,
+        "step": 2,
+        "unit": "px",
+        "default": 20
+      }
+    ]
+  },
+  {
+    "name": "Trust & stats",
+    "settings": [
+      {
+        "type": "text",
+        "id": "stat_resumes",
+        "label": "Resumes written stat",
+        "default": "15,000+"
+      },
+      {
+        "type": "text",
+        "id": "stat_success_rate",
+        "label": "Interview success rate stat",
+        "default": "96%"
+      },
+      {
+        "type": "text",
+        "id": "stat_rating",
+        "label": "Average rating stat",
+        "default": "4.9"
+      },
+      {
+        "type": "text",
+        "id": "stat_industries",
+        "label": "Industries served stat",
+        "default": "20+"
+      },
+      {
+        "type": "text",
+        "id": "google_rating",
+        "label": "Google review score",
+        "default": "4.9"
+      },
+      {
+        "type": "text",
+        "id": "google_review_count",
+        "label": "Google review count",
+        "default": "1,240+"
+      },
+      {
+        "type": "text",
+        "id": "trustpilot_rating",
+        "label": "Trustpilot score",
+        "default": "4.8"
+      },
+      {
+        "type": "text",
+        "id": "trustpilot_review_count",
+        "label": "Trustpilot review count",
+        "default": "980+"
+      }
+    ]
+  },
+  {
+    "name": "Business info",
+    "settings": [
+      {
+        "type": "text",
+        "id": "business_phone",
+        "label": "Phone number",
+        "default": "+1 (302) 555-0142"
+      },
+      {
+        "type": "text",
+        "id": "business_email",
+        "label": "Email address",
+        "default": "hello@careerresumelift.com"
+      },
+      {
+        "type": "text",
+        "id": "business_address",
+        "label": "Address",
+        "default": "8 The Green, Suite A, Dover, DE 19901"
+      },
+      {
+        "type": "text",
+        "id": "business_hours_weekday",
+        "label": "Weekday hours",
+        "default": "Mon–Fri: 8:00 AM – 8:00 PM EST"
+      },
+      {
+        "type": "text",
+        "id": "business_hours_weekend",
+        "label": "Weekend hours",
+        "default": "Sat: 10:00 AM – 4:00 PM EST · Sun: Closed"
+      }
+    ]
+  },
+  {
+    "name": "Social media",
+    "settings": [
+      {
+        "type": "text",
+        "id": "social_linkedin_link",
+        "label": "LinkedIn"
+      },
+      {
+        "type": "text",
+        "id": "social_twitter_link",
+        "label": "X / Twitter"
+      },
+      {
+        "type": "text",
+        "id": "social_facebook_link",
+        "label": "Facebook"
+      },
+      {
+        "type": "text",
+        "id": "social_instagram_link",
+        "label": "Instagram"
+      },
+      {
+        "type": "text",
+        "id": "social_trustpilot_link",
+        "label": "Trustpilot"
+      }
+    ]
+  },
+  {
+    "name": "Sticky CTA bar",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "show_sticky_cta",
+        "label": "Show sticky CTA bar",
+        "default": true
+      },
+      {
+        "type": "text",
+        "id": "sticky_cta_heading",
+        "label": "Heading",
+        "default": "Free Resume Review"
+      },
+      {
+        "type": "text",
+        "id": "sticky_cta_text",
+        "label": "Text",
+        "default": "Get expert feedback in 24 hours — no cost, no obligation."
+      },
+      {
+        "type": "url",
+        "id": "sticky_cta_link",
+        "label": "Link",
+        "default": "/pages/contact"
+      },
+      {
+        "type": "text",
+        "id": "sticky_cta_button_label",
+        "label": "Button label",
+        "default": "Start"
+      }
+    ]
+  },
+  {
+    "name": "Favicon",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon image",
+        "info": "72 x 72px .png recommended"
+      }
+    ]
+  }
+]

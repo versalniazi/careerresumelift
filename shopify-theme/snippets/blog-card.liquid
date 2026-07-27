@@ -1,0 +1,20 @@
+{%- comment -%} Usage: {% render 'blog-card', article: article, index: forloop.index0 %} {%- endcomment -%}
+{%- assign gradients = 'from-secondary,from-accent,from-primary' | split: ',' -%}
+<a href="{{ article.url }}" class="blog-card" data-reveal>
+  <div class="blog-card__media">
+    {%- if article.image -%}
+      {{ article.image | image_url: width: 600 | image_tag: loading: 'lazy', alt: article.image.alt }}
+    {%- else -%}
+      <span>{{ article.tags.first | default: 'Blog' }}</span>
+    {%- endif -%}
+  </div>
+  <div class="blog-card__body">
+    {%- if article.tags.first -%}<span class="badge badge--default" style="width:fit-content;">{{ article.tags.first }}</span>{%- endif -%}
+    <h3>{{ article.title }}</h3>
+    <p>{{ article.excerpt_or_content | strip_html | truncate: 130 }}</p>
+    <div class="blog-card__meta">
+      <span>{{ article.published_at | date: '%B %-d, %Y' }}</span>
+      <span>{{ article.content | strip_html | split: ' ' | size | divided_by: 200 | at_least: 1 }} min read</span>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,76 @@
+{% render 'breadcrumbs', current_title: current_tags | join: ', ' | default: blog.title %}
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="section-heading" data-reveal>
+      <span class="eyebrow-badge">{{ section.settings.eyebrow }}</span>
+      <h1 style="font-family:var(--font-heading);font-weight:800;font-size:clamp(2rem,4vw,2.75rem);margin:16px 0;">{{ section.settings.heading }}</h1>
+      <p>{{ section.settings.description }}</p>
+    </div>
+
+    {%- if blog.tags.size > 0 -%}
+      <div class="blog-categories" data-reveal>
+        <a href="{{ blog.url }}"{% unless current_tags %} class="is-active"{% endunless %}>All</a>
+        {%- for tag in blog.tags -%}
+          <a href="{{ blog.url }}/tagged/{{ tag | handle }}"{% if current_tags contains tag %} class="is-active"{% endif %}>{{ tag }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+
+    {%- paginate blog.articles by 12 -%}
+      {%- if blog.articles.size > 0 -%}
+        {%- if paginate.current_page == 1 and current_tags == blank -%}
+          {%- assign featured = blog.articles.first -%}
+          <div style="margin:40px 0;">
+            <a href="{{ featured.url }}" class="card" style="display:grid;grid-template-columns:1fr;gap:32px;padding:32px;text-decoration:none;" data-reveal>
+              <div class="blog-card__media" style="height:220px;border-radius:14px;">
+                {%- if featured.image -%}
+                  {{ featured.image | image_url: width: 900 | image_tag: loading: 'eager', alt: featured.image.alt }}
+                {%- else -%}
+                  <span style="font-size:2.4rem;">Featured</span>
+                {%- endif -%}
+              </div>
+              <div>
+                <span class="badge badge--accent">Featured{% if featured.tags.first %} · {{ featured.tags.first }}{% endif %}</span>
+                <h2 style="font-size:1.6rem;margin-top:14px;">{{ featured.title }}</h2>
+                <p style="color:var(--color-muted-text);margin-top:10px;">{{ featured.excerpt_or_content | strip_html | truncate: 180 }}</p>
+                <span class="feature-card__link">Read the article {% render 'icon', name: 'arrow-right', width: 14, height: 14 %}</span>
+              </div>
+            </a>
+          </div>
+        {%- endif -%}
+
+        <div class="grid grid--3">
+          {%- for article in blog.articles -%}
+            {%- unless paginate.current_page == 1 and current_tags == blank and forloop.first -%}
+              {%- render 'blog-card', article: article, index: forloop.index0 -%}
+            {%- endunless -%}
+          {%- endfor -%}
+        </div>
+      {%- else -%}
+        <div class="empty-state">
+          <p>No articles published yet.</p>
+          <p style="font-size:13px;margin-top:8px;">Add articles to the &ldquo;{{ blog.title }}&rdquo; blog in Shopify Admin to display them here.</p>
+        </div>
+      {%- endif -%}
+
+      {%- if paginate.pages > 1 -%}
+        <div style="margin-top:48px;display:flex;justify-content:center;gap:8px;">
+          {%- if paginate.previous -%}<a href="{{ paginate.previous.url }}" class="btn btn--outline btn--sm">Previous</a>{%- endif -%}
+          {%- if paginate.next -%}<a href="{{ paginate.next.url }}" class="btn btn--outline btn--sm">Next</a>{%- endif -%}
+        </div>
+      {%- endif -%}
+    {%- endpaginate -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Blog list",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Career Blog" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Insights to Help You Land Your Next Role" },
+    { "type": "textarea", "id": "description", "label": "Description", "default": "Practical, expert-backed advice on resumes, interviews, LinkedIn, and career growth." }
+  ]
+}
+{% endschema %}

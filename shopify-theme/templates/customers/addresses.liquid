@@ -1,0 +1,23 @@
+{% render 'breadcrumbs', parent_title: 'My Account', parent_url: routes.account_url, current_title: 'Addresses' %}
+
+<section class="section section--tight">
+  <div class="container" style="max-width:640px;">
+    <h1 style="font-size:1.5rem;margin-bottom:24px;">Addresses</h1>
+
+    {%- if customer.addresses.size > 0 -%}
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        {%- for address in customer.addresses -%}
+          <div class="card" style="padding:20px;">
+            <p style="font-size:14px;line-height:1.7;">{{ address | format_address }}</p>
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- else -%}
+      <div class="empty-state">
+        <p>You don't have any saved addresses yet.</p>
+      </div>
+    {%- endif -%}
+
+    <a href="{{ routes.account_url }}" class="btn btn--outline" style="margin-top:24px;">Back to Account</a>
+  </div>
+</section>

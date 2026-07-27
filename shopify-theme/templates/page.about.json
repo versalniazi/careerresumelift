@@ -1,0 +1,67 @@
+{
+  "sections": {
+    "hero": {
+      "type": "about-hero",
+      "blocks": {
+        "c1": { "type": "credential", "settings": { "icon": "badge-check", "label": "CPRW Certified" } },
+        "c2": { "type": "credential", "settings": { "icon": "scan-search", "label": "ATS Optimization Expert" } },
+        "c3": { "type": "credential", "settings": { "icon": "linkedin", "label": "LinkedIn Optimization Specialist" } },
+        "c4": { "type": "credential", "settings": { "icon": "users", "label": "Executive & Career-Change Focus" } }
+      },
+      "block_order": ["c1", "c2", "c3", "c4"],
+      "settings": {
+        "eyebrow": "About Career Resume Lift",
+        "heading": "Built by a Certified Writer Who Understands What Gets You Hired",
+        "body": "<p>Career Resume Lift was founded by <strong>Muhammad Shair Khan</strong>, a Certified Professional Resume Writer (CPRW) who built this agency around a simple belief: your resume should work as hard as you do.</p><p>After years of watching qualified, hard-working professionals get filtered out by Applicant Tracking Systems and generic resume templates, Muhammad set out to build a resume writing practice grounded in two things — rigorous ATS knowledge and genuine career storytelling.</p><p>Today, Career Resume Lift works with professionals across the United States — from recent graduates writing their first resume to C-Suite executives preparing for a board-level search — helping each one present their career clearly, credibly, and competitively.</p>",
+        "name": "Muhammad Shair Khan",
+        "title": "Founder & Certified Professional Resume Writer (CPRW)",
+        "initials": "MSK"
+      }
+    },
+    "credentials": {
+      "type": "icon-grid",
+      "blocks": {
+        "cr1": { "type": "item", "settings": { "icon": "badge-check", "title": "Certified Professional Resume Writer (CPRW)", "description": "Certified through the Professional Association of Resume Writers and Career Coaches (PARWCC), the industry's leading resume writing credential." } },
+        "cr2": { "type": "item", "settings": { "icon": "scan-search", "title": "ATS Optimization Expert", "description": "Deep, ongoing expertise in how major Applicant Tracking Systems parse, rank, and filter resumes across industries." } },
+        "cr3": { "type": "item", "settings": { "icon": "check", "title": "Career Branding Specialist", "description": "Focused on building a cohesive personal brand across resumes, LinkedIn, and cover letters — not just individual documents." } },
+        "cr4": { "type": "item", "settings": { "icon": "linkedin", "title": "LinkedIn Optimization", "description": "Specialized training in LinkedIn profile strategy, recruiter search visibility, and personal brand positioning." } },
+        "cr5": { "type": "item", "settings": { "icon": "target", "title": "Executive Resume Expert", "description": "Focused experience helping Directors, VPs, and C-Suite leaders position their leadership impact for board-level and executive search review." } }
+      },
+      "block_order": ["cr1", "cr2", "cr3", "cr4", "cr5"],
+      "settings": {
+        "eyebrow": "Credentials",
+        "heading": "Certified Expertise You Can Trust",
+        "description": "Career Resume Lift is built on formal training and hands-on expertise in resume strategy, ATS systems, and personal branding.",
+        "columns": "3",
+        "muted_bg": true
+      }
+    },
+    "values": {
+      "type": "process-steps",
+      "blocks": {
+        "v1": { "type": "step", "settings": { "title": "Every Client Gets a Real Writer", "description": "No templates, no AI-generated filler. Every resume is written by a Certified Professional Resume Writer who takes the time to understand your career." } },
+        "v2": { "type": "step", "settings": { "title": "Strategy Before Writing", "description": "Before a single word is written, we research your target roles and industry to build a resume strategy — not just reformat your old one." } },
+        "v3": { "type": "step", "settings": { "title": "Honest, No-Hype Guidance", "description": "We tell clients what will actually help them get hired — not what sounds impressive. No inflated claims, no gimmicks." } },
+        "v4": { "type": "step", "settings": { "title": "Confidentiality Always", "description": "Your career information, documents, and job search are always kept strictly confidential." } }
+      },
+      "block_order": ["v1", "v2", "v3", "v4"],
+      "settings": {
+        "eyebrow": "Our Approach",
+        "heading": "What We Believe About Resume Writing",
+        "description": ""
+      }
+    },
+    "stats": {
+      "type": "stats",
+      "settings": {}
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Ready to Work With a Certified Resume Writer?",
+        "description": "Get a free resume review and see exactly how we'd approach your career story."
+      }
+    }
+  },
+  "order": ["hero", "credentials", "values", "stats", "cta"]
+}

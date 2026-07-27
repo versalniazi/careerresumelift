@@ -1,0 +1,13 @@
+{
+  "sections": {
+    "main": {
+      "type": "rich-text-page",
+      "settings": {
+        "show_badge": true,
+        "show_updated": true,
+        "updated_date": "July 27, 2026"
+      }
+    }
+  },
+  "order": ["main"]
+}

@@ -1,0 +1,63 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "breadcrumb_title": "FAQ",
+        "eyebrow": "FAQ",
+        "heading": "Frequently Asked Questions",
+        "description": "Everything you need to know about working with Career Resume Lift."
+      }
+    },
+    "faq-getting-started": {
+      "type": "faq-accordion",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "How does the resume writing process work?", "answer": "After you choose a package and complete checkout, you'll fill out a detailed intake questionnaire about your work history and goals. Your assigned Certified Professional Resume Writer researches your target role, drafts your resume, and delivers it within your package's turnaround window." } },
+        "f2": { "type": "faq", "settings": { "question": "How long does it take to get my resume?", "answer": "Standard turnaround is 3–7 business days depending on your package, starting from when you submit your completed intake questionnaire. Rush delivery is available for select packages." } },
+        "f3": { "type": "faq", "settings": { "question": "Do I need to prepare anything before I start?", "answer": "It helps to have your current resume (if you have one), a list of target job titles, and any job descriptions you're interested in." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": { "eyebrow": "", "heading": "Getting Started", "description": "" }
+    },
+    "faq-pricing": {
+      "type": "faq-accordion",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Which package is right for me?", "answer": "Our Professional Resume package suits most mid-level professionals. Executives and senior leaders should consider our Executive Resume package. Federal job seekers need our Federal Resume package." } },
+        "f2": { "type": "faq", "settings": { "question": "Do you offer payment plans?", "answer": "Yes, payment plans are available on select packages. Contact our team to discuss options that work for your budget." } },
+        "f3": { "type": "faq", "settings": { "question": "Is there a money-back guarantee?", "answer": "Yes. If you're not satisfied after your revision rounds, we offer a satisfaction guarantee outlined in our Refund Policy." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": { "eyebrow": "", "heading": "Pricing & Packages", "description": "" }
+    },
+    "faq-ats": {
+      "type": "faq-accordion",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "What is an ATS and why does it matter?", "answer": "An Applicant Tracking System (ATS) is software used by employers to scan, filter, and rank resumes before a human ever sees them. Our resumes are formatted and keyword-optimized to parse correctly through major ATS platforms." } },
+        "f2": { "type": "faq", "settings": { "question": "Will my resume still look good to a human reader?", "answer": "Yes. We balance ATS compatibility with clean, professional visual design so your resume performs well with software and makes a strong impression on recruiters." } },
+        "f3": { "type": "faq", "settings": { "question": "What file formats will I receive?", "answer": "You'll receive your final resume as an editable Microsoft Word (.docx) file and a print-ready PDF." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": { "eyebrow": "", "heading": "ATS & Formatting", "description": "" }
+    },
+    "faq-writer": {
+      "type": "faq-accordion",
+      "blocks": {
+        "f1": { "type": "faq", "settings": { "question": "Will I work with the same writer throughout the process?", "answer": "Yes, you're matched with one Certified Professional Resume Writer who manages your project from intake through final delivery and all revisions." } },
+        "f2": { "type": "faq", "settings": { "question": "How many revisions do I get?", "answer": "Revision rounds vary by package, typically 2–3 rounds, with some packages including unlimited revisions within a set time window." } },
+        "f3": { "type": "faq", "settings": { "question": "Is my information kept confidential?", "answer": "Absolutely. All client information is kept strictly confidential and is never shared with third parties." } }
+      },
+      "block_order": ["f1", "f2", "f3"],
+      "settings": { "eyebrow": "", "heading": "Working With Your Writer", "description": "" }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {
+        "heading": "Still Have Questions?",
+        "description": "Reach out and our team will get back to you within one business day.",
+        "primary_label": "Contact Us",
+        "primary_link": "/pages/contact"
+      }
+    }
+  },
+  "order": ["hero", "faq-getting-started", "faq-pricing", "faq-ats", "faq-writer", "cta"]
+}

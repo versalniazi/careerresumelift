@@ -1,0 +1,34 @@
+<section class="error-page">
+  <div class="container" style="max-width:640px;text-align:center;">
+    <span class="error-page__icon">{% render 'icon', name: 'search', width: 28, height: 28 %}</span>
+    <h1>{{ 'general.404.title' | t }}</h1>
+    <p>{{ 'general.404.subtext' | t }}</p>
+    <div class="error-page__actions">
+      <a href="{{ routes.root_url }}" class="btn btn--primary btn--lg">
+        {{ 'general.404.link' | t }}
+        {% render 'icon', name: 'arrow-right', width: 18, height: 18 %}
+      </a>
+      <a href="/pages/contact" class="btn btn--outline btn--lg">Contact Us</a>
+    </div>
+
+    {%- if section.settings.collection != blank -%}
+      <div style="margin-top:56px;border-top:1px solid var(--color-border);padding-top:32px;">
+        <p style="font-size:13px;font-weight:700;color:var(--color-muted-text);">Popular Services</p>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:16px;">
+          {%- for product in section.settings.collection.products limit: 5 -%}
+            <a href="{{ product.url }}" style="border:1px solid var(--color-border);border-radius:999px;padding:8px 16px;font-size:14px;">{{ product.title }}</a>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "404 page",
+  "settings": [
+    { "type": "collection", "id": "collection", "label": "Collection to show as popular links" }
+  ]
+}
+{% endschema %}

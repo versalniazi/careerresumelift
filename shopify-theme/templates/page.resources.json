@@ -1,0 +1,34 @@
+{
+  "sections": {
+    "hero": {
+      "type": "page-hero",
+      "settings": {
+        "breadcrumb_title": "Resources",
+        "eyebrow": "Free Resources",
+        "heading": "Free Tools to Support Your Job Search",
+        "description": "Practical, no-cost guides and checklists built by our certified writers to help you at every stage of your job search. Email us and we'll send any resource straight to your inbox."
+      }
+    },
+    "grid": {
+      "type": "icon-grid",
+      "blocks": {
+        "r1": { "type": "item", "settings": { "icon": "check", "title": "Free Resume Checklist", "description": "A 25-point checklist to audit your resume for formatting, ATS compatibility, and content gaps before you apply.", "link": "/pages/contact", "link_label": "Request this guide" } },
+        "r2": { "type": "item", "settings": { "icon": "scan-search", "title": "The Complete ATS Resume Guide", "description": "Understand exactly how Applicant Tracking Systems scan and rank resumes, and how to format yours to pass.", "link": "/pages/contact", "link_label": "Request this guide" } },
+        "r3": { "type": "item", "settings": { "icon": "check", "title": "Interview Preparation Checklist", "description": "A step-by-step checklist covering research, STAR-method answers, and follow-up etiquette for every interview.", "link": "/pages/contact", "link_label": "Request this guide" } },
+        "r4": { "type": "item", "settings": { "icon": "target", "title": "Career Planning Guide", "description": "A structured workbook for clarifying your career goals, skills, and next-step target roles.", "link": "/pages/contact", "link_label": "Request this guide" } },
+        "r5": { "type": "item", "settings": { "icon": "file-text", "title": "Resume Templates Library", "description": "ATS-friendly resume templates for entry-level, professional, and executive career stages.", "link": "/pages/contact", "link_label": "Request this guide" } },
+        "r6": { "type": "item", "settings": { "icon": "trending-up", "title": "Salary Negotiation Guide", "description": "Scripts, research strategies, and timing guidance to negotiate your next offer with confidence.", "link": "/pages/contact", "link_label": "Request this guide" } }
+      },
+      "block_order": ["r1", "r2", "r3", "r4", "r5", "r6"],
+      "settings": {
+        "columns": "3",
+        "muted_bg": false
+      }
+    },
+    "cta": {
+      "type": "cta-banner",
+      "settings": {}
+    }
+  },
+  "order": ["hero", "grid", "cta"]
+}

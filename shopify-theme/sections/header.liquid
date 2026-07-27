@@ -1,0 +1,108 @@
+<header class="site-header" data-header>
+  <div class="container site-header__inner">
+    <a href="{{ routes.root_url }}" class="site-header__logo">
+      <span class="site-header__logo-mark">CR</span>
+      <span class="site-header__logo-text">{{ shop.name | default: 'Career Resume Lift' }}</span>
+    </a>
+
+    <nav class="site-nav" aria-label="Main menu">
+      {%- for link in section.settings.main_menu.links -%}
+        {%- if link.links != blank -%}
+          <div class="site-nav__item site-nav__item--has-menu">
+            <button class="site-nav__link" aria-expanded="false" data-menu-trigger>
+              {{ link.title }}
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg>
+            </button>
+            <div class="site-nav__dropdown" data-menu>
+              <div class="site-nav__dropdown-grid">
+                {%- for childlink in link.links -%}
+                  <a href="{{ childlink.url }}" class="site-nav__dropdown-link">
+                    <span class="site-nav__dropdown-icon">{% render 'icon', name: 'file-text' %}</span>
+                    <span>
+                      <span class="site-nav__dropdown-title">{{ childlink.title }}</span>
+                    </span>
+                  </a>
+                {%- endfor -%}
+              </div>
+            </div>
+          </div>
+        {%- else -%}
+          <a href="{{ link.url }}" class="site-nav__link">{{ link.title }}</a>
+        {%- endif -%}
+      {%- endfor -%}
+    </nav>
+
+    <div class="site-header__actions">
+      <button class="icon-button" data-theme-toggle aria-label="{{ 'accessibility.toggle_theme' | t }}">
+        {% render 'icon', name: 'sun', class: 'icon-sun' %}
+        {% render 'icon', name: 'moon', class: 'icon-moon' %}
+      </button>
+
+      <a href="{{ routes.search_url }}" class="icon-button hide-on-mobile" aria-label="{{ 'general.search.search' | t }}">
+        {% render 'icon', name: 'search' %}
+      </a>
+
+      <a href="{{ routes.cart_url }}" class="icon-button" data-cart-icon aria-label="{{ 'accessibility.cart' | t }}">
+        {% render 'icon', name: 'shopping-bag' %}
+        <span class="cart-count{% if cart.item_count == 0 %} is-hidden{% endif %}" data-cart-count>{{ cart.item_count }}</span>
+      </a>
+
+      <a href="{{ section.settings.pricing_link | default: '/collections/all' }}" class="btn btn--outline btn--sm hide-on-mobile">
+        View Pricing
+      </a>
+      <a href="{{ section.settings.cta_link | default: '/pages/contact' }}" class="btn btn--primary btn--sm hide-on-mobile">
+        Book Free Review
+        {% render 'icon', name: 'arrow-right', width: 16, height: 16 %}
+      </a>
+
+      <button class="icon-button show-on-mobile" data-mobile-menu-trigger aria-label="{{ 'accessibility.menu' | t }}">
+        {% render 'icon', name: 'menu' %}
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" data-mobile-menu>
+    <div class="mobile-nav__inner">
+      {%- for link in section.settings.main_menu.links -%}
+        <a href="{{ link.url }}" class="mobile-nav__link">{{ link.title }}</a>
+        {%- if link.links != blank -%}
+          <div class="mobile-nav__submenu">
+            {%- for childlink in link.links -%}
+              <a href="{{ childlink.url }}" class="mobile-nav__sublink">{{ childlink.title }}</a>
+            {%- endfor -%}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+      <div class="mobile-nav__actions">
+        <a href="{{ section.settings.pricing_link | default: '/collections/all' }}" class="btn btn--outline">View Pricing</a>
+        <a href="{{ section.settings.cta_link | default: '/pages/contact' }}" class="btn btn--primary">Book Free Resume Review</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+{% schema %}
+{
+  "name": "Header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "main_menu",
+      "label": "Main menu",
+      "default": "main-menu"
+    },
+    {
+      "type": "url",
+      "id": "pricing_link",
+      "label": "Pricing link",
+      "default": "/collections/all"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Primary CTA link",
+      "default": "/pages/contact"
+    }
+  ]
+}
+{% endschema %}
